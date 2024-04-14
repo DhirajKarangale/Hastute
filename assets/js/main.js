@@ -249,6 +249,9 @@
   const portfolioLightbox7 = GLightbox({
     selector: '.portfolio-lightbox7'
   });
+  const portfolioLightbox8 = GLightbox({
+    selector: '.portfolio-lightbox8'
+  });
 
   /**
    * Portfolio details slider
