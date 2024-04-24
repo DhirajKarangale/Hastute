@@ -65,28 +65,155 @@
                 .nav-link:hover {
                     color: #09d91b !important;
                 }
+
+                @media screen and (max-width: 768px) {
+            .col-lg-6 {
+                width: 100%; /* Make the columns full-width on smaller screens */
+                order: unset; /* Reset the order */
+                margin-bottom: 20px; /* Add some spacing between columns */
+            }
+
+            /* Hide the hero image on smaller screens */
+            .hero-img {
+                display: none;
+            }
+
+            /* Adjust button width for smaller screens */
+            .btn {
+                width: 100%;
+            }
+
+            /* Adjust font sizes for smaller screens */
+            h1 {
+                font-size: 150%;
+            }
+
+            h2 {
+                font-size: 100%;
+            }
+
+            /* Make the YouTube video responsive */
+            .hero-video {
+                margin-top: 200px; /* Add margin at the top */
+            }
+
+            .hero-video iframe {
+                width: 100%; /* Set the width of the video to 100% */
+                height: 300px; /* Set the height of the video for smaller screens */
+            }
+
+            /* Ensure the download button is visible */
+            .download-button {
+                /* display: block; */
+                margin-top: 20px; /* Add some spacing between the button and the video */
+            }
+        }
+
+        /* Media query for larger screens */
+        @media screen and (min-width: 769px) {
+            .hero-video {
+                margin-top: 100px; /* Add margin at the top */
+            }
+
+            .hero-video iframe {
+                width: 100%; /* Set the width of the video to 100% */
+                height: 350px; /* Set the height of the video for larger screens */
+            }
+
+            .download-button {
+                /* display: block; */
+                margin-top: 20px; /* Add some spacing between the button and the video */
+            }
+        }
+    </style>
             </style>
 
             <nav id="navbar" class="navbar">
-                <ul style="list-style-type: none; padding: 0; margin:0;">
-                    <li><a class="nav-link scrollto active" href="#hero" style="color: white; text-decoration: none; padding:10px;">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about" style="color: white; text-decoration: none; padding: 10px;">About</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio" style="color: white; text-decoration: none; padding: 10px;">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing" style="color: white; text-decoration: none; padding: 10px;">Pricing</a></li>
-                    <li><a class="nav-link scrollto" href="#contact" style="color: white; text-decoration: none; padding: 10px;">Contact</a></li>
-                    <li>
-                        <a class="getstarted scrollto" href="https://wa.me/+918766032951?text=Hello%20there,%20I%20want%20to%20get%20started" style="background-color: #0e3502; color: white; padding: 10px; text-decoration: none; border-radius: 8px; transition: background-color 0.3s; border:2px solid white ">Get Started</a>
-                    </li>
-
-                    <style>
-                        .getstarted.scrollto:hover {
-                            background-color: #09d91b !important;
-                        }
-                    </style>
-
-
+                <ul class="nav-menu">
+                    <li><a class="nav-link scrollto active" href="index.html#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#pricing">Pricing</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+                    <li><a class="getstarted scrollto" href="https://wa.me/+918766032951?text=Hello%20there,%20I%20want%20to%20get%20started">Get Started</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
+            
+                <style>
+                    /* Style for the navigation menu */
+                    .nav-menu {
+                        list-style-type: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center; /* Center align items vertically */
+                        position: fixed;
+                        top: 0;
+                        left: -100%; /* Initially hide the menu off-screen */
+                        width: 100%;
+                        height: 100%;
+                        transition: left 0.3s ease;
+                        z-index: 9999; /* Ensure the menu appears above other content */
+                        background-color: #0e3502; /* Apply original background color */
+                    }
+            
+                    .nav-menu.active {
+                        left: 0; /* Show the menu by bringing it back on-screen */
+                    }
+            
+                    .nav-menu li {
+                        margin-bottom: 10px; /* Add spacing between menu items */
+                    }
+            
+                    .nav-menu a {
+                        color: white;
+                        text-decoration: none;
+                        padding: 10px;
+                        border-radius: 8px;
+                        transition: background-color 0.3s;
+                        border: 2px solid white;
+                        width: 80%; /* Adjust width to fit mobile screen */
+                        text-align: center; /* Center align text */
+                        background-color: #0e3502; /* Apply original background color */
+                    }
+            
+                    .nav-menu a:hover {
+                        background-color: #07c517;
+                    }
+            
+                    .mobile-nav-toggle {
+                        display: block; /* Show the mobile menu toggle */
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        font-size: 24px;
+                        cursor: pointer;
+                        color: white;
+                        z-index: 99999;
+                    }
+            
+                    @media screen and (min-width: 768px) {
+                        /* Media query for larger screens */
+                        .nav-menu {
+                            flex-direction: row; /* Switch to horizontal layout */
+                            position: static;
+                            background-color: #0e3502; /* Set background color to original color for larger screens */
+                        }
+            
+                        .nav-menu li {
+                            margin: 0 15px; /* Add horizontal spacing between menu items */
+                        }
+            
+                        .nav-menu a {
+                            width: auto; /* Reset width to auto for larger screens */
+                        }
+            
+                        .mobile-nav-toggle {
+                            display: none; /* Hide the mobile menu toggle on larger screens */
+                        }
+                    }
+                </style>
             </nav>
 
         </div>
@@ -101,23 +228,28 @@
                     <h1 data-aos="fade-up" style="font-size: 190%;">Dive into the Future of Gaming</h1>
                     <h2 data-aos="fade-up" data-aos-delay="400" style="font-size: 120%; padding: 5px;">Survive, conquer in this open-world roguelike adventure!<br>Download now jungali jumper 3D</h2>
                     <div data-aos="fade-up" data-aos-delay="800">
-                        <a class="btn btn-primary mt-2" href="https://play.google.com/store/apps/details?id=com.dksoftware.junjalijumper3d&hl=en&gl=US" style="background-color: #0c2a02; color: white; padding: 10px 20px; border-radius: 15px; text-decoration: none; transition: background-color 0.3s; border: 3px solid white; width: 400px; height: 60px; font-size: 22px;">Download</a>
-
-                        <style>
-                            .btn-primary:hover {
-                                background-color: #09d91b !important;
-                            }
-                        </style>
+                        <a class="btn btn-primary mt-2 download-button" href="https://play.google.com/store/apps/details?id=com.dksoftware.junjalijumper3d&hl=en&gl=US" style="background-color: #0c2a02; color: white; padding: 10px 20px; border-radius: 15px; text-decoration: none; transition: background-color 0.3s; border: 3px solid white; width: 100%; max-width: 400px; font-size: 20px; margin: 20px auto;">Download</a>
                     </div>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="300">
+                <div class="col-lg-6 order-1 order-lg-2 hero-video" data-aos="fade-left" data-aos-delay="300">
                     <div style="position: relative;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/h18CKrQIlpk?autoplay=1&mute=1&loop=1&controls=1&showinfo=0&autohide=0&modestbranding=1&playlist=h18CKrQIlpk&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="560" height="400" src="https://www.youtube.com/embed/h18CKrQIlpk?autoplay=1&mute=1&loop=1&controls=1&showinfo=0&autohide=0&modestbranding=1&playlist=h18CKrQIlpk&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </div>
+    
+        <style>
+            /* Media query for smaller screens */
+            @media screen and (max-width: 768px) {
+                .download-button {
+                    font-size: 16px; /* Decrease font size for smaller screens */
+                }
+            }
+        </style>
     </section>
+        
+    
 
 
 
@@ -192,14 +324,23 @@
                     </h3>
                     <br/>
                     <a class="btn btn-primary mt-2" href="https://play.google.com/store/apps/details?id=com.dksoftware.junjalijumper3d&hl=en&gl=US" style="background-color: #0c2a02; color: white; padding: 10px 20px; border-radius: 15px; text-decoration: none; transition: background-color 0.3s; border:2px solid white ; width: 550px; height: 70px;font-size: 30px">Download</a>
-
+                
                     <style>
                         .btn-primary:hover {
                             background-color: #09d91b!important;
                         }
+                
+                        @media screen and (max-width: 768px) {
+                            .btn-primary {
+                                width: 100%;
+                                max-width: 300px; /* Set maximum width for smaller screens */
+                                font-size: 24px; /* Decrease font size for smaller screens */
+                                height: auto; /* Allow the height to adjust based on content */
+                            }
+                        }
                     </style>
-
                 </div>
+                
 
             </div>
         </section>
@@ -453,48 +594,6 @@
 
         </section>
 
-        <!-- Client Section -->
-
-        <!-- <section id="clients" class="clients clients">
-      <div class="container">
-
-        
-        <div class="section-title">
-          <h2>Clients</h2>
-        </div>
-
-        <div class="row" style="margin-left: 10%;">
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/TES.png" class="img-fluid" alt="" data-aos="zoom-in" style="width: 60%; height: 70%;" >
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/Playhobo.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100" style="width: 60%; height: 70%;" >
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/LifeOfCards.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200" style="width: 60%; height: 80%;" >
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/EzyHelper.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300" style="width: 70%; height: 80%;" >
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="assets/img/clients/CompactGyan.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400" style="width: 70%; height: 80%;" >
-          </div>
-
-
-        </div>
-
-      </div>
-    </section> -->
-
-
-        <!-- slick slider     -->
-
-
         <section id="clients" class="clients clients">
             <div class="container">
 
@@ -511,44 +610,30 @@
 
                     <div>
                         <div class="inner">
-                            <!-- <h2 class="">Slide 1</h2>
-              <p > jkhjgfgcfyuyfgghjgg</p> -->
                         </div>
                         <img src="./assets/img/clients/Playhobo.png" alt="" class="img-fluid d-block mx-auto" style="width: 30%; height: 30%;">
                     </div>
 
-
                     <div>
                         <div class="inner">
-                            <!-- <h2 class="">Slide 1</h2>
-              <p > jkhjgfgcfyuyfgghjgg</p> -->
                         </div>
                         <img src="./assets/img/clients/LifeOfCards.png" alt="" class="img-fluid d-block mx-auto" style="width: 30%; height: 20%;">
                     </div>
 
-
                     <div>
                         <div class="inner">
-                            <!-- <h2 class="">Slide 1</h2>
-              <p > jkhjgfgcfyuyfgghjgg</p> -->
                         </div>
                         <img src="assets/img/clients/TES.png" alt="" class="img-fluid d-block mx-auto" style="width: 40%; height: 50%;">
                     </div>
 
-
                     <div>
                         <div class="inner">
-                            <!-- <h2 class="">Slide 1</h2>
-              <p > jkhjgfgcfyuyfgghjgg</p> -->
                         </div>
                         <img src="./assets/img/clients/CompactGyan.png" alt="" class="img-fluid d-block mx-auto" style="width: 50%; height: 50%;">
                     </div>
 
-
                     <div>
                         <div class="inner">
-                            <!-- <h2 class="">Slide 1</h2>
-              <p > jkhjgfgcfyuyfgghjgg</p> -->
                         </div>
                         <img src="./assets/img/clients/EzyHelper.png" alt="" class="img-fluid d-block mx-auto" style="width: 50%; height: 50%;">
                     </div>
@@ -556,18 +641,10 @@
 
                     <div>
                         <div class="inner">
-                            <!-- <h2 class="">Slide 1</h2>
-              <p > jkhjgfgcfyuyfgghjgg</p> -->
                         </div>
                         <img src="./assets/img/clients/Black.png" alt="" class="img-fluid d-block mx-auto">
                     </div>
-
-
-
                 </div>
-
-
-
             </div>
         </section>
 
@@ -605,10 +682,7 @@
                     </div>
                 </div>
 
-
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
-
-
                     <div class="col-lg-6 col-md-6 portfolio-item filter-card mx-auto">
                         <div class="changepic">
                             <div class="portfolio-wrap">
@@ -628,7 +702,6 @@
                                         </a>
                                         <a href="assets/img/portfolio/portfolio-7.6.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox8" title=Ride and Rule "></i></a>
                   <a href="assets/img/portfolio/portfolio-7.7.jpeg " data-gallery="portfolioGallery " class="portfolio-lightbox8 " title="Ride and Rule "></i></a>
-                  
                 </div>
               </div>
             </div>
@@ -679,8 +752,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap">
                                 <img src="assets/img/portfolio/portfolio-6.1.png" class="img-fluid" alt="">
@@ -705,8 +776,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap">
@@ -760,8 +829,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap">
@@ -893,18 +960,29 @@
         <section class="contact" id="contact">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2 style="color: rgb(248, 243, 243);" onmouseover="this.style.color='#09d91b'" onmouseout="this.style.color='white'">
-                        Contact Us</h2>
+                    <h2 style="color: rgb(248, 243, 243);" onmouseover="this.style.color='#09d91b'" onmouseout="this.style.color='white'">Contact Us</h2>
                 </div>
                 <h2 data-aos="zoom-in">GET IN TOUCH</h2>
                 <form id="contactForm" method="post" class="mt-4">
                     <input type="text" name="name" id="name" placeholder="Name" data-aos="fade-right" required>
                     <input type="email" name="email" id="email" placeholder="Email" data-aos="fade-right" required>
                     <textarea name="concern" id="concern" rows="6" placeholder="Message" data-aos="fade-right" required></textarea>
-                    <button class="btn btn-success" type="submit" data-aos="zoom-in-up">Send Message</button>
+                    <button class="btn btn-success" type="submit" data-aos="zoom-in-up" style="width: 100%; max-width: 300px; font-size: 24px; margin-top: 20px; font-family: inherit;">Send Message</button>
                 </form>
             </div>
+        
+            <style>
+                /* Media query for smaller screens */
+                @media screen and (max-width: 768px) {
+                    .btn.btn-success {
+                        font-size: 28px; /* Maintain the same font size for smaller screens */
+                        font-weight: bold;
+                    }
+                }
+            </style>
         </section>
+        
+        
         <footer class="foot" id="foot">
             <a href="#hero" data-aos="fade-down">
                 <i class="fa fa-arrow-circle-up" aria-hidden="true" id="one" style="font-size: 40px; padding-top: 10px; color: white;"></i>
@@ -916,40 +994,39 @@
                 <a href="https://twitter.com/hastute_" target="_blank">
                     <i class="fa fa-twitter" aria-hidden="true" id="one"></i>
                 </a>
-                <!-- <a href="https://www.instagram.com/hastute_/" target="_blank">
-          <i class="fa fa-instagram" aria-hidden="true" id="three"></i>
-      </a> -->
+              
+                <a href="https://www.instagram.com/_hastute_/" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true" id="three"></i>
+                </a>
+              
                 <a href="https://www.linkedin.com/company/hastute/" target="_blank">
                     <i class="fa fa-linkedin-square" aria-hidden="true" id="four"></i>
                 </a>
-
+    
                 <a href="https://www.youtube.com/@dhirajkarangale" target="_blank" rel="noopener noreferrer">
                     <i class="fa fa-youtube-play" aria-hidden="true" id="one"></i>
                 </a>
-
             </div>
             <div class="container others ">
                 <div class="row">
-                    <div class="col-sm-3" data-aos="fade-up">
+                    <div class="col-sm-12 col-md-3" data-aos="fade-up">
                         <h5>Hastute</h5>
-                        <h6>To stay competitive in the market, your company must stay up-to-date with the latest technology trends and advancements.
-                        </h6>
+                        <h6>To stay competitive in the market, your company must stay up-to-date with the latest technology trends and advancements.</h6>
                     </div>
-                    <div class="col-sm-3" data-aos="fade-up">
+                    <div class="col-sm-12 col-md-3" data-aos="fade-up">
                         <h5>Email</h5>
                         <a style="color:#09d91b;" href="mailto:helphastute@gmail.com">
                             <h6>helphastute@gmail.com</h6>
                         </a>
-
                     </div>
-                    <div class="col-sm-3" data-aos="fade-up">
+                    <div class="col-sm-12 col-md-3" data-aos="fade-up">
                         <h5>Address</h5>
                         <h6>Pune, Maharashtra, India</h6>
                         <h6>PIN 411048 </h6>
                     </div>
-                    <div class="col-sm-3" data-aos="fade-up">
-                        <h5 style="margin-left: 12%;">Quick Links</h5>
-                        <ul style="list-style-type: none; display:inline-flexbox;">
+                    <div class="col-sm-12 col-md-3" data-aos="fade-up">
+                        <h5>Quick Links</h5>
+                        <ul style="list-style-type: none; margin: 0; padding: 0;">
                             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                             <li><a class="nav-link scrollto" href="#about">About</a></li>
                             <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
@@ -958,20 +1035,31 @@
                         </ul>
                     </div>
                 </div>
-                <p>&COPY; Hastute. ALL RIGHTS RESERVED</p>
-                <!-- <div style="display: inline;">
-        <a  href="./privacy.html"><p>Privacy Policy</p></a>
-        <a href="./privacy.html"><p>Privacy Policy</p></a>
-      </div> -->
-                <div style="display: inline">
-                    <a style="display: inline; color: white;" href="./privacy.html">Privacy Policy</a>
-                    <a style="display: inline;color: white;margin-left: 2%;" href="./termsandconditions.html">Terms and Conditions</a>
-                    <a style="display: inline;color: white;margin-left: 2%;" href="./datadeletion.html">Data Deletion</a>
+                <p style="text-align: center;">&COPY; Hastute. ALL RIGHTS RESERVED</p>
+                <div style="text-align: center;">
+                    <a style="color: white;" href="./privacy.html">Privacy Policy</a>
+                    <a style="color: white; margin-left: 10px;" href="./termsandconditions.html">Terms and Conditions</a>
+                    <a style="color: white; margin-left: 10px;" href="./datadeletion.html">Data Deletion</a>
                 </div>
-
             </div>
-
         </footer>
+    
+        <style>
+            /* Media query for smaller screens */
+            @media screen and (max-width: 768px) {
+                .container.others {
+                    padding: 20px; /* Add padding to the footer content */
+                }
+                
+                .col-sm-12.col-md-3 {
+                    margin-bottom: 20px; /* Add margin between columns */
+                }
+                
+                .foot {
+                    padding-bottom: 30px; /* Add padding to the bottom of the footer */
+                }
+            }
+        </style>
 
 
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -990,19 +1078,6 @@
         <!-- Template Main JS File -->
         <script src="assets/js/main.js"></script>
         <script>
-            // $(document).ready(function(){
-            //   $('.slider').slick({
-            //     infinite:true,
-            //     slidesToShow:3,
-            //     slidesToScroll:1,
-            //     autoplay:true,
-            //     autoplaySpeed:900,
-            //     dots:false,
-            //     arrows:false,
-
-            //   })
-            // });
-
 
             document.getElementById("contactForm").addEventListener("submit", function(event) {
                 event.preventDefault(); // Prevent form submission
@@ -1031,19 +1106,12 @@
                     }
                 });
             });
-
-
             const navbar = document.getElementById('navbar');
-
-            // Get the mobile-nav-toggle element
             const toggleButton = navbar.querySelector('.mobile-nav-toggle');
-
-            // Add click event listener to toggle button
             toggleButton.addEventListener('click', function() {
                 navbar.classList.toggle('slide-in');
             });
         </script>
 
 </body>
-
 </html>

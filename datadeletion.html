@@ -34,9 +34,6 @@
 
             <div class="logo">
                 <h1><a href="index.html">Hastute</a></h1>
-
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
             </div>
 
             <style>
@@ -45,30 +42,96 @@
                 }
             </style>
 
-            <nav id="navbar" class="navbar">
-                <ul style="list-style-type: none; padding: 0; margin: 0;">
-                    <li><a class="nav-link scrollto active" href="index.html#hero" style="color: white; text-decoration: none; padding: 10px;">Home</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#about" style="color: white; text-decoration: none; padding: 10px;">About</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#portfolio" style="color: white; text-decoration: none; padding: 10px;">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#pricing" style="color: white; text-decoration: none; padding: 10px;">Pricing</a></li>
-                    <li><a class="nav-link scrollto" href="index.html#contact" style="color: white; text-decoration: none; padding: 10px;">Contact</a></li>
-                    <li>
-                        <a class="getstarted scrollto" href="https://wa.me/+918766032951?text=Hello%20there,%20I%20want%20to%20get%20started" style="background-color: #0e3502; color: white; padding: 10px; text-decoration: none; border-radius: 8px; transition: background-color 0.3s; border:2px solid white">Get Started</a>
-                    </li>
+<nav id="navbar" class="navbar">
+    <ul class="nav-menu">
+        <li><a class="nav-link scrollto active" href="index.html#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+        <li><a class="nav-link scrollto" href="index.html#portfolio">Portfolio</a></li>
+        <li><a class="nav-link scrollto" href="index.html#pricing">Pricing</a></li>
+        <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+        <li><a class="getstarted scrollto" href="https://wa.me/+918766032951?text=Hello%20there,%20I%20want%20to%20get%20started">Get Started</a></li>
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
 
-                    <style>
-                        .getstarted.scrollto:hover {
-                            background-color: #07c517 !important;
-                        }
-                    </style>
+    <style>
+        /* Style for the navigation menu */
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items vertically */
+            position: fixed;
+            top: 0;
+            left: -100%; /* Initially hide the menu off-screen */
+            width: 100%;
+            height: 100%;
+            transition: left 0.3s ease;
+            z-index: 9999; /* Ensure the menu appears above other content */
+            background-color: #0e3502; /* Apply original background color */
+        }
+
+        .nav-menu.active {
+            left: 0; /* Show the menu by bringing it back on-screen */
+        }
+
+        .nav-menu li {
+            margin-bottom: 10px; /* Add spacing between menu items */
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            border: 2px solid white;
+            width: 80%; /* Adjust width to fit mobile screen */
+            text-align: center; /* Center align text */
+            background-color: #0e3502; /* Apply original background color */
+        }
+
+        .nav-menu a:hover {
+            background-color: #07c517;
+        }
+
+        .mobile-nav-toggle {
+            display: block; /* Show the mobile menu toggle */
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            z-index: 99999;
+        }
+
+        @media screen and (min-width: 768px) {
+            /* Media query for larger screens */
+            .nav-menu {
+                flex-direction: row; /* Switch to horizontal layout */
+                position: static;
+                background-color: #0e3502; /* Set background color to original color for larger screens */
+            }
+
+            .nav-menu li {
+                margin: 0 15px; /* Add horizontal spacing between menu items */
+            }
+
+            .nav-menu a {
+                width: auto; /* Reset width to auto for larger screens */
+            }
+
+            .mobile-nav-toggle {
+                display: none; /* Hide the mobile menu toggle on larger screens */
+            }
+        }
+    </style>
+</nav>
 
 
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
 
-
-            <!-- .navbar -->
         </div>
     </header>
     <!-- End Header -->
@@ -129,9 +192,11 @@
             <a href="https://twitter.com/hastute_" target="_blank">
                 <i class="fa fa-twitter" aria-hidden="true" id="one"></i>
             </a>
-            <!-- <a href="https://www.instagram.com/hastute_/" target="_blank">
-    <i class="fa fa-instagram" aria-hidden="true" id="three"></i>
-</a> -->
+          
+            <a href="https://www.instagram.com/_hastute_/" target="_blank">
+                <i class="fa fa-instagram" aria-hidden="true" id="three"></i>
+            </a>
+          
             <a href="https://www.linkedin.com/company/hastute/" target="_blank">
                 <i class="fa fa-linkedin-square" aria-hidden="true" id="four"></i>
             </a>
@@ -139,30 +204,27 @@
             <a href="https://www.youtube.com/@dhirajkarangale" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-youtube-play" aria-hidden="true" id="one"></i>
             </a>
-
         </div>
         <div class="container others ">
             <div class="row">
-                <div class="col-sm-3" data-aos="fade-up">
+                <div class="col-sm-12 col-md-3" data-aos="fade-up">
                     <h5>Hastute</h5>
-                    <h6>To stay competitive in the market, your company must stay up-to-date with the latest technology trends and advancements.
-                    </h6>
+                    <h6>To stay competitive in the market, your company must stay up-to-date with the latest technology trends and advancements.</h6>
                 </div>
-                <div class="col-sm-3" data-aos="fade-up">
+                <div class="col-sm-12 col-md-3" data-aos="fade-up">
                     <h5>Email</h5>
                     <a style="color:#09d91b;" href="mailto:helphastute@gmail.com">
                         <h6>helphastute@gmail.com</h6>
                     </a>
-
                 </div>
-                <div class="col-sm-3" data-aos="fade-up">
+                <div class="col-sm-12 col-md-3" data-aos="fade-up">
                     <h5>Address</h5>
                     <h6>Pune, Maharashtra, India</h6>
                     <h6>PIN 411048 </h6>
                 </div>
-                <div class="col-sm-3" data-aos="fade-up">
-                    <h5 style="margin-left: 12%;">Quick Links</h5>
-                    <ul style="list-style-type: none; display:inline-flexbox;">
+                <div class="col-sm-12 col-md-3" data-aos="fade-up">
+                    <h5>Quick Links</h5>
+                    <ul style="list-style-type: none; margin: 0; padding: 0;">
                         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                         <li><a class="nav-link scrollto" href="#about">About</a></li>
                         <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
@@ -171,20 +233,31 @@
                     </ul>
                 </div>
             </div>
-            <p>&COPY; Hastute. ALL RIGHTS RESERVED</p>
-            <!-- <div style="display: inline;">
-  <a  href="./privacy.html"><p>Privacy Policy</p></a>
-  <a href="./privacy.html"><p>Privacy Policy</p></a>
-</div> -->
-            <div style="display: inline">
-                <a style="display: inline; color: white;" href="./privacy.html">Privacy Policy</a>
-                <a style="display: inline;color: white;margin-left: 2%;" href="./termsandconditions.html">Terms and Conditions</a>
-                <a style="display: inline;color: white;margin-left: 2%;" href="./datadeletion.html">Data Deletion</a>
+            <p style="text-align: center;">&COPY; Hastute. ALL RIGHTS RESERVED</p>
+            <div style="text-align: center;">
+                <a style="color: white;" href="./privacy.html">Privacy Policy</a>
+                <a style="color: white; margin-left: 10px;" href="./termsandconditions.html">Terms and Conditions</a>
+                <a style="color: white; margin-left: 10px;" href="./datadeletion.html">Data Deletion</a>
             </div>
-
         </div>
-
     </footer>
+
+    <style>
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .container.others {
+                padding: 20px; /* Add padding to the footer content */
+            }
+            
+            .col-sm-12.col-md-3 {
+                margin-bottom: 20px; /* Add margin between columns */
+            }
+            
+            .foot {
+                padding-bottom: 30px; /* Add padding to the bottom of the footer */
+            }
+        }
+    </style>
 
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
